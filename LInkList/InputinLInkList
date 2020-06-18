@@ -1,0 +1,27 @@
+
+##In this -1 is used to break the program or we assume that as Null or None
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+def takeInput():
+    list1=list(int(i) for i in input().split())
+    head=None
+    for ele in list1:
+        if ele==-1:
+            break
+        newNode=Node(ele)
+        if head is None:
+            head=newNode
+        else:
+            curr=head
+            while curr.next is not None:
+                curr=curr.next
+            curr.next=Newnode
+        return head
+ 
+
+head=takeInput()
+print(head.data)##It will print the data of the first node of the linked list
