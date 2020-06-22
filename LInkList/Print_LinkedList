@@ -1,0 +1,38 @@
+#Print the complete linked list
+
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.node=None
+        
+ def printll(head):
+     while head is not None:
+          print(str(head.data)+"--->",end="")
+          head=head.next
+     print("None")
+     return
+ 
+ 
+ 
+ def takeInput():
+    arr=list(int(ele) for ele in input().split()
+    head=None
+    
+    for currdata in arr:
+        if currdata==-1:
+            break
+        newNode=Node(currdata)
+        if head is None:
+            head=newNode
+        else:
+            curr=head
+            while curr.next is not None:
+                curr=curr.next
+            curr.next=newNode
+    return head
+    
+                  
+        
+ head=takeInput()
+ 
+ printll(head)
