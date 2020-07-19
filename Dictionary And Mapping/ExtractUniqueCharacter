@@ -1,0 +1,14 @@
+from collections import OrderedDict
+
+def uniqueChars(string):
+    # Please add your code here
+    m=OrderedDict()
+    
+    for i in string:
+        m[i]=m.get(i,0)+1
+    for i in m.keys():
+        print(i,end='')
+
+# Main
+string = input()
+uniqueChars(string)
