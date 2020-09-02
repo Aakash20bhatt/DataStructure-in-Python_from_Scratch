@@ -1,0 +1,72 @@
+#Return Keypad
+
+Given an integer n, using phone keypad find out all the possible strings that can be made using digits of input n.
+Note : The order of strings are not important.
+
+Input Format :
+Integer n
+
+Output Format :
+All possible strings in different lines
+
+Constraints :
+1 <= n <= 10^6
+
+Sample Input:
+23
+
+Sample Output:
+ad
+ae
+af
+bd
+be
+bf
+cd
+ce
+cf
+
+#Code
+def getstring(d):
+    if d==2:
+        return "abc"
+    elif d==3:
+        return "def"
+    elif d==4:
+        return "ghi"
+    elif d==5:
+        return "jkl"
+    elif d==6:
+        return "mno"
+    elif d==7:
+        return "pqrs"
+    elif d==8:
+        return "tuv"
+    elif d==9:
+        return "wxyz"
+    return " "
+    
+def keypad(n):
+    if n==0:
+        output=[]
+        output.append("")
+        return output
+    
+    smallinput=n//10
+    lastdigit=n%10
+    
+    smalloutput=keypad(smallinput)
+    optionforlastdigit=getstring(lastdigit)
+    output=[]
+    
+    for s in smalloutput :
+        for r in optionforlastdigit:
+            option=s+r
+            output.append(option)
+    
+    return output
+               
+n = int(input())
+ans = keypad(n)
+for s in ans:
+    print(s)
