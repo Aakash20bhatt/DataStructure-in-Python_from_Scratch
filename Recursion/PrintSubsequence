@@ -1,0 +1,14 @@
+def subsequence(s,o):
+    if len(s)==0:
+        print(o)
+        return 
+    
+    
+    subsequence(s[1:],o)
+    new=o+s[0]
+    subsequence(s[1:],new)
+
+        
+        
+string=input()
+subsequence(string,"")
