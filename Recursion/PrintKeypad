@@ -1,0 +1,33 @@
+def getstring(d):
+    if d==2:
+        return "abc"
+    elif d==3:
+        return "def"
+    elif d==4:
+        return "ghi"
+    elif d==5:
+        return "jkl"
+    elif d==6:
+        return "mno"
+    elif d==7:
+        return "pqrs"
+    elif d==8:
+        return "tuv"
+    elif d==9:
+        return "wxyz"
+    return ""
+
+def keypad(n,o):
+    if n==0:
+        print(o)
+        return
+    s=n//10
+    l=n%10
+    
+    op=getstring(l)
+    for c in op:
+        newop=c+o
+        keypad(s,newop)
+        
+string=int(input())
+keypad(string,"")
